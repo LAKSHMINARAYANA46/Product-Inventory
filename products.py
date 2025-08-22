@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from database.database import Base, get_db
+from database import Base, get_db
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 from typing import List, Optional
@@ -105,3 +105,4 @@ def delete_product(db: Session, product_id: int) -> bool:
     db.delete(db_product)
     db.commit()
     return True
+
